@@ -2,7 +2,14 @@
 // Define a function called getDogArtworks that makes the API call to the request URL you defined in the worksheet (to get 3 dog artworks)
 // Make sure to console log all 3 titles (after you get the data retrieve the nested values) 
 
+let requestDogArtwork = "https://dog.ceo/api/breeds/list"
 
+async function getDogArtworks(requestURL) {
+    let response = await fetch(requestURL)
+    let data = await response.json()
+    console.log(data)
+    return data
+}
 
 // Call the function and confirm it worked correctly
 
@@ -14,7 +21,13 @@
 // Now when the function it's called it should only return artwork the specified # of artworks based on the inputed search query
 // Make sure to console log the values. 
 
-
+let searchDogArtwork = "https://dog.ceo/api/breeds/list/artworks/search?q=dogs&?limit=3"
+async function searchArtworks (requestURL) {
+    let response2 = await fetch(requestURL)
+    let data = await response.json()
+    console.log(data)
+    return data
+}
 
 
 // Call the new function with the user inputs and confirm it worked correctly 
