@@ -2,17 +2,22 @@
 // Define a function called getDogArtworks that makes the API call to the request URL you defined in the worksheet (to get 3 dog artworks)
 // Make sure to console log all 3 titles (after you get the data retrieve the nested values) 
 
-let requestDogArtwork = "https://dog.ceo/api/breeds/list"
+let requestDogURL = "https://api.artic.edu/api/v1/artworks/search?q=dog&size=3"
 
-async function getDogArtworks(requestURL) {
-    let response = await fetch(requestURL)
-    let data = await response.json()
-    console.log(data)
-    return data
-}
 
 // Call the function and confirm it worked correctly
 
+async function getDogArtworks() {
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log(data.data[0].title)
+    console.log(data.data[1].title)
+    console.log(data.data[1].title)
+    return data
+}
+
+
+getDogArtworks(requestDogURL)
 
 // Task 2
 // Define another function called searchArtworks that takes in a search query and a size limit
@@ -22,9 +27,10 @@ async function getDogArtworks(requestURL) {
 // Make sure to console log the values. 
 
 let searchDogArtwork = "https://dog.ceo/api/breeds/list/artworks/search?q=dogs&?limit=3"
-async function searchArtworks (requestURL) {
+
+async function searchArtworks(requestURL) {
     let response2 = await fetch(requestURL)
-    let data = await response.json()
+    let data = await response2.json()
     console.log(data)
     return data
 }
